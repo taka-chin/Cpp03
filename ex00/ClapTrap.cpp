@@ -22,43 +22,37 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &f) {
   this->AttackDamage = f.getAttackDamage();
   return *this;
 }
-const std::string ClapTrap::getName() const{
+const std::string ClapTrap::getName() const {
   const std::string ret = Name;
   return (ret);
 }
 
-int ClapTrap::getHitPoints() const{
+int ClapTrap::getHitPoints() const {
   int ret = HitPoints;
   return (ret);
 }
 
-int ClapTrap::getEnergyPoints() const{
+int ClapTrap::getEnergyPoints() const {
   int ret = EnergyPoints;
   return (ret);
 }
 
-int ClapTrap::getAttackDamage() const{
+int ClapTrap::getAttackDamage() const {
   int ret = AttackDamage;
   return (ret);
 }
 
 void ClapTrap::attack(const std::string &target) {
   std::cout << "attck function called" << std::endl;
-  std::cout << "ClapTrap " 
-		    << getName() 
-			<< " attacks" 
-			<< target 
-			<< ", causing "
-            << getAttackDamage() 
-			<< " points of damage!" 
-			<< std::endl;
+  std::cout << "ClapTrap " << getName() << " attacks" << target << ", causing "
+            << getAttackDamage() << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
   std::cout << "takeDamage function called" << std::endl;
-  this->HitPoints -= amount ;
+  this->HitPoints -= amount;
 }
 void ClapTrap::beRepaired(unsigned int amount) {
   std::cout << "beRepaired function called" << std::endl;
-  this->HitPoints += amount ;
+  this->HitPoints += amount;
 }
