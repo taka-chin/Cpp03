@@ -17,21 +17,20 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &f) {
   std::cout << "Copy assignment operator called" << std::endl;
   return *this;
 }
-const std::string ClapTrap::getName()
-{
-	const std::string ret = Name;
-	return (ret);
+const std::string ClapTrap::getName() {
+  const std::string ret = Name;
+  return (ret);
 }
 
-const int ClapTrap::getAttackDamage()
-{
-	const int ret = AttackDamage;
-	return (ret);
+const int ClapTrap::getAttackDamage() {
+  const int ret = AttackDamage;
+  return (ret);
 }
 
 void ClapTrap::attack(const std::string &target) {
   std::cout << "attck function called" << std::endl;
-  std::cout << "ClapTrap " << getName()<<"attacks" << target <<", causing "<< getAttackDamage() <<"points of damage!" << std::endl;
+  std::cout << "ClapTrap " << getName() << "attacks" << target << ", causing "
+            << getAttackDamage() << "points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
