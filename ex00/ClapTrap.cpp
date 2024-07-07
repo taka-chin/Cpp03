@@ -44,15 +44,36 @@ int ClapTrap::getAttackDamage() const {
 
 void ClapTrap::attack(const std::string &target) {
   std::cout << "attck function called" << std::endl;
-  std::cout << "ClapTrap " << getName() << " attacks" << target << ", causing "
+  if(!getEnergyPoints())
+  {
+  	std::cout << "ClapTrap "<< getName() <<"No Energy Points !!" << std::endl;
+  }
+  else if(!getHitPoints() )
+  {
+  	std::cout << "ClapTrap "<< getName() <<"No Hit Points !!" << std::endl;
+  }
+  else
+  {
+  	std::cout << "ClapTrap " << getName() << " attacks" << target << ", causing "
             << getAttackDamage() << " points of damage!" << std::endl;
+		this->EnergyPoints -= 1;
+  }
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
   std::cout << "takeDamage function called" << std::endl;
   this->HitPoints -= amount;
 }
+
 void ClapTrap::beRepaired(unsigned int amount) {
-  std::cout << "beRepaired function called" << std::endl;
-  this->HitPoints += amount;
+	if(getEnergyPoints())
+	{
+  		std::cout << "beRepaired function called" << std::endl;
+  		this->HitPoints += amount;
+		this->EnergyPoints -= 1;
+	}
+	else
+  	{
+  		std::cout << "ClapTrap No Energy Points !!" << std::endl;
+	}
 }
