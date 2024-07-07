@@ -1,8 +1,8 @@
 #ifndef SCAV_TRAP_HPP
 #define SCAV_TRAP_HPP
 
-#include <string>
 #include "ClapTrap.hpp"
+#include <string>
 
 class ScavTrap : public ClapTrap {
 public:
