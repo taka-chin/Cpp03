@@ -33,3 +33,23 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &f) {
 ScavTrap::~ScavTrap() {
   std::cout << "ScavTrap destructor called" << std::endl;
 }
+
+void ScavTrap::attack(const std::string &target)
+{
+  std::cout << "ScavTrap attck function called" << std::endl;
+  if (EnergyPoints <= 0) {
+    std::cout << "ClapTrap " << Name << " No Energy Points !!" << std::endl;
+  } else if (HitPoints <= 0) {
+    std::cout << "ClapTrap " << Name << " No Hit Points !!" << std::endl;
+  } else {
+    std::cout << "ClapTrap " << Name << " attacks " << target << ", causing "
+              << AttackDamage << " points of damage!" << std::endl;
+    this->EnergyPoints -= 1;
+  }
+}
+  
+void ScavTrap::guardGate()
+{
+  std::cout << "ScavTrap guardGate function called" << std::endl;
+  std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+}
