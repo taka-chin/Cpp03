@@ -37,11 +37,11 @@ ScavTrap::~ScavTrap() {
 void ScavTrap::attack(const std::string &target) {
   std::cout << "ScavTrap attck function called" << std::endl;
   if (EnergyPoints <= 0) {
-    std::cout << "ClapTrap " << Name << " No Energy Points !!" << std::endl;
+    std::cout << "ScavTrap " << Name << " No Energy Points !!" << std::endl;
   } else if (HitPoints <= 0) {
-    std::cout << "ClapTrap " << Name << " No Hit Points !!" << std::endl;
+    std::cout << "ScavTrap " << Name << " No Hit Points !!" << std::endl;
   } else {
-    std::cout << "ClapTrap " << Name << " attacks " << target << ", causing "
+    std::cout << "ScavTrap " << Name << " attacks " << target << ", causing "
               << AttackDamage << " points of damage!" << std::endl;
     this->EnergyPoints -= 1;
   }
