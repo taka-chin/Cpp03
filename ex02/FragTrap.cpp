@@ -47,9 +47,7 @@ void FragTrap::attack(const std::string &target) {
   }
 }
 
-void FragTrap::highFivesGuys(void)
-{
+void FragTrap::highFivesGuys(void) {
   std::cout << "FragTrap highFivesGuys function called" << std::endl;
   std::cout << "hoge hoge" << std::endl;
-
 }
