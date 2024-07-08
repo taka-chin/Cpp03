@@ -55,7 +55,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 void ClapTrap::beRepaired(unsigned int amount) {
   std::cout << "ClapTrap beRepaired function called" << std::endl;
   if (EnergyPoints > 0) {
-    std::cout << "ClapTrap " << Name << amount << " Hitpoints Repaired!"
+    std::cout << "ClapTrap " << Name << " " << amount << " Hitpoints Repaired!"
               << std::endl;
     if (std::numeric_limits<unsigned int>::max() - HitPoints < amount)
       std::numeric_limits<unsigned int>::max();
