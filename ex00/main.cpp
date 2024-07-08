@@ -1,13 +1,20 @@
 #include "ClapTrap.hpp"
+#include <iostream>
 
 int main() {
-  ClapTrap player("田中");
-  ClapTrap player1("山田");
+  ClapTrap tanaka("田中");
+  ClapTrap yamada("山田");
+  int i = 0;
 
-  player.attack("山田");
-  player1.takeDamage(0);
-  player1.beRepaired(4294967285);
-  player1.attack("田中");
-  player.takeDamage(0);
-  player1.beRepaired(4294967286);
+  while(tanaka.getHitPoints()  && yamada.getHitPoints() )
+  {
+	std::cout << "Turn: " << i++ << std::endl;
+  	tanaka.attack("山田");
+  	yamada.takeDamage(1);
+  	yamada.beRepaired(1);
+
+  	yamada.attack("田中");
+  	tanaka.takeDamage(1);
+  	tanaka.beRepaired(1);
+  }
 }

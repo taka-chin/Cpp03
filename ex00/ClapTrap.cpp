@@ -47,22 +47,37 @@ void ClapTrap::takeDamage(unsigned int amount) {
   std::cout << "ClapTrap " << Name << " " << amount << " Damage taked!"
             << std::endl;
   if (HitPoints <= amount)
+  {
     this->HitPoints = 0;
+  	std::cout << Name << " is dead" << std::endl;
+  }
   else
     this->HitPoints -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
   std::cout << "ClapTrap beRepaired function called" << std::endl;
-  if (EnergyPoints > 0) {
+  if(HitPoints <= 0)
+  {
+    std::cout << "ClapTrap " << Name << " No Hit Points !!" << std::endl;
+  	return;
+  }
+   if(EnergyPoints > 0) {
     std::cout << "ClapTrap " << Name << " " << amount << " Hitpoints Repaired!"
               << std::endl;
     if (std::numeric_limits<unsigned int>::max() - HitPoints < amount)
-      std::numeric_limits<unsigned int>::max();
+      this->HitPoints = std::numeric_limits<unsigned int>::max();
     else
       this->HitPoints += amount;
     this->EnergyPoints -= 1;
   } else {
     std::cout << "ClapTrap No Energy Points !!" << std::endl;
   }
+}
+
+unsigned int ClapTrap::getHitPoints()
+{
+  std::cout << "ClapTrap getHitPoints function called" << std::endl;
+  return this->HitPoints;
+
 }
