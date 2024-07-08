@@ -34,8 +34,7 @@ ScavTrap::~ScavTrap() {
   std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-void ScavTrap::attack(const std::string &target)
-{
+void ScavTrap::attack(const std::string &target) {
   std::cout << "ScavTrap attck function called" << std::endl;
   if (EnergyPoints <= 0) {
     std::cout << "ClapTrap " << Name << " No Energy Points !!" << std::endl;
@@ -47,9 +46,8 @@ void ScavTrap::attack(const std::string &target)
     this->EnergyPoints -= 1;
   }
 }
-  
-void ScavTrap::guardGate()
-{
+
+void ScavTrap::guardGate() {
   std::cout << "ScavTrap guardGate function called" << std::endl;
   std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
