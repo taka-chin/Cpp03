@@ -1,9 +1,8 @@
 #include "ClapTrap.hpp"
-#include <limits>
 #include <iostream>
+#include <limits>
 
-ClapTrap::ClapTrap()
-    : HitPoints(10), EnergyPoints(10), AttackDamage(0) {
+ClapTrap::ClapTrap() : HitPoints(10), EnergyPoints(10), AttackDamage(0) {
   std::cout << "Default constructor called" << std::endl;
 }
 
@@ -35,30 +34,31 @@ void ClapTrap::attack(const std::string &target) {
   } else if (HitPoints <= 0) {
     std::cout << "ClapTrap " << Name << " No Hit Points !!" << std::endl;
   } else {
-    std::cout << "ClapTrap " << Name << " attacks " << target
-              << ", causing " << AttackDamage << " points of damage!"
-              << std::endl;
+    std::cout << "ClapTrap " << Name << " attacks " << target << ", causing "
+              << AttackDamage << " points of damage!" << std::endl;
     this->EnergyPoints -= 1;
   }
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
   std::cout << "takeDamage function called" << std::endl;
-  std::cout << "ClapTrap " << Name << " " << amount <<" Damage taked!" << std::endl;
-  if(HitPoints <= amount )
-  	 this->HitPoints = 0;
+  std::cout << "ClapTrap " << Name << " " << amount << " Damage taked!"
+            << std::endl;
+  if (HitPoints <= amount)
+    this->HitPoints = 0;
   else
-  	 this->HitPoints -= amount;
+    this->HitPoints -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
   std::cout << "beRepaired function called" << std::endl;
   if (EnergyPoints > 0) {
-  	std::cout <<"ClapTrap " << Name << amount <<" Hitpoints Repaired!" << std::endl;
-	if(std::numeric_limits<unsigned int>::max()  - HitPoints < amount)
-		std::numeric_limits<unsigned int>::max();
-	else
-    	this->HitPoints += amount;
+    std::cout << "ClapTrap " << Name << amount << " Hitpoints Repaired!"
+              << std::endl;
+    if (std::numeric_limits<unsigned int>::max() - HitPoints < amount)
+      std::numeric_limits<unsigned int>::max();
+    else
+      this->HitPoints += amount;
     this->EnergyPoints -= 1;
   } else {
     std::cout << "ClapTrap No Energy Points !!" << std::endl;
