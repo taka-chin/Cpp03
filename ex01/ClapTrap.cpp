@@ -11,7 +11,9 @@ ClapTrap::ClapTrap(std::string name)
   std::cout << "ClapTrap Name constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap() { std::cout << "ClapTrap destructor called" << std::endl; }
+ClapTrap::~ClapTrap() {
+  std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(const ClapTrap &f) {
   std::cout << "ClapTrap Copy constructor called" << std::endl;
