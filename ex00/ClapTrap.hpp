@@ -11,6 +11,7 @@ private:
   unsigned int AttackDamage;
 
 public:
+  ClapTrap();
   ClapTrap(std::string name);
   ~ClapTrap();
   ClapTrap(const ClapTrap &f);
@@ -18,10 +19,6 @@ public:
   void attack(const std::string &target);
   void takeDamage(unsigned int amount);
   void beRepaired(unsigned int amount);
-  const std::string getName() const;
-  unsigned int getHitPoints() const;
-  unsigned int getEnergyPoints() const;
-  unsigned int getAttackDamage() const;
 };
 
 #endif
