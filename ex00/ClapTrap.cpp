@@ -3,23 +3,23 @@
 #include <limits>
 
 ClapTrap::ClapTrap() : HitPoints(10), EnergyPoints(10), AttackDamage(0) {
-  std::cout << "Default constructor called" << std::endl;
+  std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
     : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0) {
-  std::cout << "name constructor called" << std::endl;
+  std::cout << "ClapTrap Name constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() { std::cout << "destructor called" << std::endl; }
 
 ClapTrap::ClapTrap(const ClapTrap &f) {
-  std::cout << "Copy constructor called" << std::endl;
+  std::cout << "ClapTrap Copy constructor called" << std::endl;
   *this = f;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &f) {
-  std::cout << "Copy assignment operator called" << std::endl;
+  std::cout << "ClapTrap Copy assignment operator called" << std::endl;
   this->Name = f.Name;
   this->HitPoints = f.HitPoints;
   this->EnergyPoints = f.EnergyPoints;
@@ -28,7 +28,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &f) {
 }
 
 void ClapTrap::attack(const std::string &target) {
-  std::cout << "attck function called" << std::endl;
+  std::cout << "ClapTrap attck function called" << std::endl;
   if (EnergyPoints <= 0) {
     std::cout << "ClapTrap " << Name << " No Energy Points !!" << std::endl;
   } else if (HitPoints <= 0) {
@@ -41,7 +41,7 @@ void ClapTrap::attack(const std::string &target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-  std::cout << "takeDamage function called" << std::endl;
+  std::cout << "ClapTrap takeDamage function called" << std::endl;
   std::cout << "ClapTrap " << Name << " " << amount << " Damage taked!"
             << std::endl;
   if (HitPoints <= amount)
@@ -51,7 +51,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-  std::cout << "beRepaired function called" << std::endl;
+  std::cout << "ClapTrap beRepaired function called" << std::endl;
   if (EnergyPoints > 0) {
     std::cout << "ClapTrap " << Name << amount << " Hitpoints Repaired!"
               << std::endl;
